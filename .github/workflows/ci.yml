@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code ကို ဆွဲယူ
+        uses: actions/checkout@v4
+
+      - name: Node.js ပြင်ဆင်
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Dependencies သွင်း
+        run: npm ci
+
+      - name: Test run
+        run: npm test
