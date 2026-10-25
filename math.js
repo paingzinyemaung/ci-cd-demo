@@ -1,5 +1,5 @@
 function add(a, b) {
-  return a + b;
+  return a - b; // တမင်မှားထားတာ
 }
 
 function isEven(n) {
